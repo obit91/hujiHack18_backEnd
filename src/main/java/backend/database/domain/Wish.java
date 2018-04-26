@@ -21,6 +21,10 @@ public class Wish {
     private ArrayList<User> confirmed;
     private ArrayList<User> applying;
     
+    public Long getId() {
+    	return id;
+    }
+    
 	public String getTitle() {
 		return title;
 	}
