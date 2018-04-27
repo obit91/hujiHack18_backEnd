@@ -31,7 +31,12 @@ public class WishUpdater {
 		List<Wish> allWishes = wishRepo.findAll();
 		return new ResponseEntity<List<Wish>>(allWishes, HttpStatus.OK);
 	}
-
+	
+	@RequestMapping(value = "/wish/create", method = RequestMethod.POST)
+	private ResponseEntity<Wish> createWish(@RequestBody Wish wish) {
+		wish = wishRepo.save(wish);
+		return new ResponseEntity<Wish>(wish, HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/wish/update", method = RequestMethod.POST)
 	public ResponseEntity<String> updateWishStatus(@RequestBody Wish wish) {

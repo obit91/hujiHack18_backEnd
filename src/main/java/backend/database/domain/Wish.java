@@ -19,19 +19,37 @@ public class Wish {
 	private Long id;
 
 	private String wishTitle;
-//	private RewardCategoryType rewardCategoryType;
-//	private WishCategoryType wishCategoryType;
+	private RewardCategoryType rewardCategoryType;
+	private WishCategoryType wishCategoryType;
 	private String wishDescription;
 	private String rewardDescription;
 	private String rewardTitle;
-	// private String author;
+//	 private String author;
 	private Long authorId;
-//	private WishStatusType wishStatusType;
+	private WishStatusType wishStatusType;
 //	private ArrayList<User> confirmed;
 //	private ArrayList<User> applying;
 	
 	public Long getId() {
 		return id;
+	}
+	public RewardCategoryType getRewardCategoryType() {
+		return rewardCategoryType;
+	}
+	public void setRewardCategoryType(RewardCategoryType rewardCategoryType) {
+		this.rewardCategoryType = rewardCategoryType;
+	}
+	public WishCategoryType getWishCategoryType() {
+		return wishCategoryType;
+	}
+	public void setWishCategoryType(WishCategoryType wishCategoryType) {
+		this.wishCategoryType = wishCategoryType;
+	}
+	public WishStatusType getWishStatusType() {
+		return wishStatusType;
+	}
+	public void setWishStatusType(WishStatusType wishStatusType) {
+		this.wishStatusType = wishStatusType;
 	}
 	public String getRewardTitle() {
 		return rewardTitle;
