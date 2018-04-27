@@ -7,10 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import backend.database.enums.RewardType;
+import backend.database.enums.RewardCategoryType;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
+	
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -18,7 +19,7 @@ public class User {
     private String phone;
     private String address;
     private String name;
-    private RewardType reward;
+    private RewardCategoryType reward;
     private ArrayList<Wish> requests; 
     private ArrayList<Wish> accomplishments; 
     private ArrayList<Wish> inProcess;
@@ -51,10 +52,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public RewardType getReward() {
+	public RewardCategoryType getReward() {
 		return reward;
 	}
-	public void setReward(RewardType reward) {
+	public void setReward(RewardCategoryType reward) {
 		this.reward = reward;
 	}
 	public ArrayList<Wish> getRequests() {

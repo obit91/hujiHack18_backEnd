@@ -1,6 +1,6 @@
 package backend.database.enums;
 
-public enum RewardType {
+public enum RewardCategoryType {
     MONEY,
     DRUGS,
     EVENT

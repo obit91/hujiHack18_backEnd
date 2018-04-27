@@ -7,24 +7,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import backend.database.enums.RewardCategoryType;
+import backend.database.enums.WishStatusType;
 
 @Entity
-public class Reward {
+public class WishStatus {
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 	
 	@Enumerated(EnumType.STRING)
-    private RewardCategoryType rewardCategory;
+    private WishStatusType wishStatusType;
 
-	public RewardCategoryType getRewardType() {
-		return rewardCategory;
+	public WishStatusType getWishStatusType() {
+		return wishStatusType;
 	}
 
-	public void setRewardType(RewardCategoryType rewardType) {
-		this.rewardCategory = rewardType;
+	public void setRewardType(WishStatusType wishStatusType) {
+		this.wishStatusType = wishStatusType;
 	}
 
 	public Long getId() {

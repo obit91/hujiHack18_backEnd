@@ -10,25 +10,30 @@ import javax.persistence.Id;
 import backend.database.enums.RewardCategoryType;
 
 @Entity
-public class Reward {
-
+public class RewardCategory {
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 	
 	@Enumerated(EnumType.STRING)
-    private RewardCategoryType rewardCategory;
-
-	public RewardCategoryType getRewardType() {
-		return rewardCategory;
-	}
-
-	public void setRewardType(RewardCategoryType rewardType) {
-		this.rewardCategory = rewardType;
-	}
+    private RewardCategoryType rewardCategoryType;
 
 	public Long getId() {
 		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public RewardCategoryType getRewardCategoryType() {
+		return rewardCategoryType;
+	}
+
+	public void setRewardCategoryType(RewardCategoryType rewardCategoryType) {
+		this.rewardCategoryType = rewardCategoryType;
+	}
+	
+	
 }

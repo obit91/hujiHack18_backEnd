@@ -1,0 +1,13 @@
+backend\database\domain\Wish.class
+backend\database\repositories\UserRepository.class
+backend\database\repositories\WishRepository.class
+backend\Bootstrapper.class
+backend\database\domain\User.class
+backend\database\repositories\RewardRepository.class
+backend\database\domain\Reward.class
+backend\firebase\AndroidPushNotificationsService.class
+backend\rest\controllers\POC.class
+backend\firebase\HeaderRequestInterceptor.class
+backend\rest\controllers\UserController.class
+gib\backend\rest\EditDB.class
+backend\database\enums\RewardType.class

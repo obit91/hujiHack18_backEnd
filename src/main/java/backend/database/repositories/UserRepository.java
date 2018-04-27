@@ -1,5 +1,7 @@
 package backend.database.repositories;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,5 +12,7 @@ import backend.database.domain.User;
 
 @RestController
 public interface UserRepository extends CrudRepository<User, Long> {
+	
+	public List<User> findByEmail(String email);
 
 }
