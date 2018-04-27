@@ -1,15 +1,18 @@
 package backend.database.repositories;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RestController;
 
 import backend.database.domain.Wish;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
-@RepositoryRestResource(collectionResourceRel = "wish", path = "wish")
+@RestController
 public interface WishRepository extends CrudRepository<Wish, Long> {
+	
+	public List<Wish> findAll();
 
 }

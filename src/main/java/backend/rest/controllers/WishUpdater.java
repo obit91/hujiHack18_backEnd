@@ -1,7 +1,7 @@
 package backend.rest.controllers;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +25,21 @@ public class WishUpdater {
 
 	@Autowired
 	AndroidPushNotificationsService androidPushNotificationsService;
+	
+	@RequestMapping(value = "/wish", method = RequestMethod.GET)
+	private ResponseEntity<List<Wish>> getWishes() {
+		List<Wish> allWishes = wishRepo.findAll();
+		return new ResponseEntity<List<Wish>>(allWishes, HttpStatus.OK);
+	}
+
 
 	@RequestMapping(value = "/wish/update", method = RequestMethod.POST)
 	public ResponseEntity<String> updateWishStatus(@RequestBody Wish wish) {
 		ResponseEntity<String> notifyWish = null;
 		Wish existingWish = wishRepo.findById(wish.getId()).get();
-		if (wish.getWishStatusType() == existingWish.getWishStatusType()) {
-			notifyWish = notifyWish(wish.getAuthorId());
-		}
+//		if (wish.getWishStatusType() == existingWish.getWishStatusType()) {
+//			notifyWish = notifyWish(wish.getAuthorId());
+//		}
 		wish = wishRepo.save(wish);
 		return notifyWish;
 	}

@@ -41,7 +41,13 @@ public class UserController {
 	
 	@RequestMapping(value = "/user/email/{mail}", method = RequestMethod.GET)
 	public ResponseEntity<User> getByMail(@PathVariable String mail) {
+		User user = null;
 		List<User> allUsers = userRepo.findByEmail(mail);
-		return new ResponseEntity<User>(allUsers.get(0), HttpStatus.OK);
+		if (allUsers.size() > 0) {
+			user = allUsers.get(0);
+			return new ResponseEntity<User>(user, HttpStatus.OK);
+		}
+		return new ResponseEntity<User>(user, HttpStatus.BAD_REQUEST);
+		
 	}
 }

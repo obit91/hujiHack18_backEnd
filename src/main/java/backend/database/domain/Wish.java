@@ -19,17 +19,25 @@ public class Wish {
 	private Long id;
 
 	private String wishTitle;
-	private RewardCategoryType rewardCategoryType;
-	private WishCategoryType wishCategoryType;
+//	private RewardCategoryType rewardCategoryType;
+//	private WishCategoryType wishCategoryType;
 	private String wishDescription;
 	private String rewardDescription;
+	private String rewardTitle;
 	// private String author;
 	private Long authorId;
-	private WishStatusType wishStatusType;
-	private ArrayList<User> confirmed;
-	private ArrayList<User> applying;
+//	private WishStatusType wishStatusType;
+//	private ArrayList<User> confirmed;
+//	private ArrayList<User> applying;
+	
 	public Long getId() {
 		return id;
+	}
+	public String getRewardTitle() {
+		return rewardTitle;
+	}
+	public void setRewardTitle(String rewardTitle) {
+		this.rewardTitle = rewardTitle;
 	}
 	public void setId(Long id) {
 		this.id = id;
@@ -39,18 +47,6 @@ public class Wish {
 	}
 	public void setWishTitle(String wishTitle) {
 		this.wishTitle = wishTitle;
-	}
-	public RewardCategoryType getRewardCategoryType() {
-		return rewardCategoryType;
-	}
-	public void setRewardCategoryType(RewardCategoryType rewardCategoryType) {
-		this.rewardCategoryType = rewardCategoryType;
-	}
-	public WishCategoryType getWishCategoryType() {
-		return wishCategoryType;
-	}
-	public void setWishCategoryType(WishCategoryType wishCategoryType) {
-		this.wishCategoryType = wishCategoryType;
 	}
 	public String getWishDescription() {
 		return wishDescription;
@@ -70,25 +66,6 @@ public class Wish {
 	public void setAuthorId(Long authorId) {
 		this.authorId = authorId;
 	}
-	public WishStatusType getWishStatusType() {
-		return wishStatusType;
-	}
-	public void setWishStatusType(WishStatusType wishStatusType) {
-		this.wishStatusType = wishStatusType;
-	}
-	public ArrayList<User> getConfirmed() {
-		return confirmed;
-	}
-	public void setConfirmed(ArrayList<User> confirmed) {
-		this.confirmed = confirmed;
-	}
-	public ArrayList<User> getApplying() {
-		return applying;
-	}
-	public void setApplying(ArrayList<User> applying) {
-		this.applying = applying;
-	}
-	
 	
 	
 }
